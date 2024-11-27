@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="register.css"> <!-- Link to external CSS for styling -->
+    <script src="register.js" defer></script> <!-- Link to JavaScript for confirm password validation -->
+</head>
+<body>
+    <div class="register-container">
+        <h2>Register</h2>
+        <form action="submit-registration.php" method="POST" onsubmit="return validatePassword()"> <!-- Add validation function call -->
+            
+            <!-- Employee ID -->
+            <div class="input-group">
+                <label for="employeeId">Employee ID</label>
+                <input type="text" id="employeeId" name="employeeId" required>
+            </div>
+            
+            <!-- Company Email -->
+            <div class="input-group">
+                <label for="companyEmail">Company Email</label>
+                <input type="email" id="companyEmail" name="companyEmail" required>
+            </div>
+            
+            <!-- Password -->
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <!-- Confirm Password -->
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <span id="passwordMatchStatus"></span> <!-- Span for password match status -->
+            </div>
+            
+            
+            <!-- Phone Number -->
+            <div class="input-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            </div>
+            
+            <!-- Date of Birth -->
+            <div class="input-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <!-- Security Question -->
+            <div class="input-group">
+                <label for="securityQuestion">Security Question</label>
+                <select id="securityQuestion" name="securityQuestion" required>
+                    <option value="">Select a Security Question</option>
+                    <option value="mother_maiden_name">What is your mother's maiden name?</option>
+                    <option value="first_pet">What was the name of your first pet?</option>
+                    <option value="favorite_teacher">Who was your favorite teacher?</option>
+                    <option value="birth_city">In which city were you born?</option>
+                </select>
+            </div>
+
+            <!-- Security Answer -->
+            <div class="input-group">
+                <label for="answer">Answer</label>
+                <input type="text" id="answer" name="answer" required>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
